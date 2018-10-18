@@ -1,0 +1,47 @@
+---
+swagger: "2.0"
+info:
+  description: "This is a sample Image Upload server created by Arjun as Part of FLAT-LAY\
+    \ training."
+  version: "1.0.0"
+  title: "Arjun Image Uploader"
+  contact:
+    email: "nemaniarjun@gmail.com"
+host: "localhost:10010"
+basePath: "/"
+schemes:
+- "http"
+paths:
+  /uploadImage:
+    post:
+      summary: "base64 encode and image"
+      description: "Takes an image as a form upload and gives the image back in base64\
+        \ format which can also be entered into a database."
+      operationId: "uploadFile"
+      consumes:
+      - "multipart/form-data"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "file"
+        in: "formData"
+        description: "file to upload"
+        required: true
+        type: "file"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+      x-swagger-router-controller: "Default"
+definitions:
+  ApiResponse:
+    type: "object"
+    properties:
+      message:
+        type: "string"
+      image:
+        type: "string"
+    example:
+      image: "image"
+      message: "message"
