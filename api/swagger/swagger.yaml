@@ -1,3 +1,4 @@
+
 ---
 swagger: "2.0"
 info:
@@ -33,15 +34,15 @@ paths:
           description: "successful operation"
           schema:
             $ref: "#/definitions/ApiResponse"
-      x-swagger-router-controller: "Default"
+      x-swagger-router-controller: "image"
 definitions:
   ApiResponse:
     type: "object"
     properties:
       message:
         type: "string"
-      image:
+      base64img:
         type: "string"
     example:
-      image: "image"
+      base64img: "R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs="
       message: "message"
