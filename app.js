@@ -1,7 +1,9 @@
 'use strict';
 
 var SwaggerExpress = require('swagger-express-mw');
+const cors = require('cors');
 var app = require('express')();
+app.use(cors());
 module.exports = app; // for testing
 
 var config = {
