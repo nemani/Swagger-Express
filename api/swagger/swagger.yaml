@@ -15,9 +15,8 @@ schemes:
 paths:
   /uploadImage:
     post:
-      summary: "base64 encode and image"
-      description: "Takes an image as a form upload and gives the image back in base64\
-        \ format which can also be entered into a database."
+      summary: "saves image to location, returns location"
+      description: "Takes an image as a form upload, saves it and returns the location."
       operationId: "uploadFile"
       consumes:
       - "multipart/form-data"
@@ -41,8 +40,8 @@ definitions:
     properties:
       message:
         type: "string"
-      base64img:
+      fpath:
         type: "string"
     example:
-      base64img: "R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs="
+      fpath: "./imagestore/x.jpg"
       message: "message"
